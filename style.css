@@ -1,0 +1,229 @@
+* {
+    font-family: verdana
+}
+
+:root {
+    --card-height: 100px;
+}
+
+#main {
+    background-image: url("assets/background.jpg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position-x: center;
+    background-position-y: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main .content {
+    background-color: rgba(244, 244, 244, 0.85);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background-color: blue;
+    min-width: 100%;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 4em !important;
+    position: relative;
+    vertical-align: middle;
+}
+
+.selector {
+    display: inline-block;
+}
+
+.selector button,
+p {
+    display: inline-block;
+}
+
+#avatar-preview img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    position: absolute;
+    -webkit-user-drag: none;
+}
+
+#avatar-preview {
+    display: inline-block;
+    width: 50%;
+    position: relative;
+    left: 50px;
+}
+
+.avatar-selector {
+    display: inline-block;
+    width: 50%;
+    right: 50px;
+    position: relative;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.navEmoji {
+    visibility: hidden;
+    height: 50px;
+    width: 50px;
+}
+
+.navEmoji img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+
+/* Style for Game */
+
+#start-game {
+    position: absolute;
+    visibility: visible;
+}
+
+#gameboard {
+    height: 550px;
+    width: 550px;
+    padding: 25px;
+    background: grey;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    gap: 3px;
+    /* border-radius: 10px; */
+    justify-content: center;
+    align-items: center;
+}
+
+.cards,
+.card,
+.view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 400px;
+    width: 400px;
+    padding-left: 0;
+    background-color: transparent;
+}
+
+.card img {
+    -webkit-user-drag: none;
+    top: 10%;
+    left: 10%;
+    position: absolute;
+    height: auto;
+    width: 80%;
+}
+
+.cards .card {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    height: var(--card-height);
+    width: var(--card-height);
+    border-radius: 7px;
+}
+
+.card .view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 7px;
+    background: #fff;
+    pointer-events: none;
+    backface-visibility: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s linear;
+    backface-visibility: hidden;
+}
+
+.card .front-view span {
+    font-size: 60px;
+    color: rgb(34, 34, 34);
+}
+
+/* Animations */
+.card .back-view {
+    transform: rotateY(-180deg);
+}
+
+.card.flip .back-view {
+    transform: rotateY(0);
+}
+
+.card.flip .front-view {
+    transform: rotateY(180deg);
+}
+
+.card.shake {
+    animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-13px);
+    }
+
+    40% {
+        transform: translateX(13px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+/* Game Over Screen */
+
+.gameover {
+    background-color: rgb(13, 109, 253);
+    text-align: center;
+    justify-content: center;
+    visibility: hidden;
+    position: absolute;
+}
+
+/* Table Styling */
+
+.table {
+    max-width: 60vw;
+}

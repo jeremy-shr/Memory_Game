@@ -1,0 +1,27 @@
+{
+    "highscores": [
+        {
+            "level": 1,
+            "highScore": 10
+        },
+        {
+            "level": 2,
+            "highScore": 30
+        },
+        {
+            "level": 3,
+            "highScore": 30
+        },
+        {
+            "level": 4,
+            "highScore": 30
+        }
+    ],
+    "users": [
+        {
+            "time": 105,
+            "score": 201,
+            "name": "Jeremy"
+        }
+    ]
+}
