@@ -1,4 +1,7 @@
+When VM is running, the game can be played at:
 http://ml-lab-4d78f073-aa49-4f0e-bce2-31e5254052c7.ukwest.cloudapp.azure.com:55487/MemoryGame/index.php
+
+## Features
 
 Landing Page:
 - Content shown depends on whether or not user is logged in (points to either the game or registration)
