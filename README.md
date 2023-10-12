@@ -1,6 +1,10 @@
 When VM is running, the game can be played at:
 http://ml-lab-4d78f073-aa49-4f0e-bce2-31e5254052c7.ukwest.cloudapp.azure.com:55487/MemoryGame/index.php
 
+## Task
+
+This project was built as the assessment for the Web Dev first year Web development module. It included strict visual demands so focus was on implementation of a variety of features.
+
 ## Features
 
 Landing Page:
