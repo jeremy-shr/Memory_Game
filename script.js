@@ -1,3 +1,5 @@
+
+// Function that checks for malicious input and then creates a post request to the server containing user data
 function checkInput() {
     const errorMessage = document.getElementById('error-message');
     let username = document.getElementById("username").value;
@@ -17,6 +19,7 @@ function checkInput() {
     }
 }
 
+// Constants used to generate emoji based on unique characteristics
 const eyes = ["normal", "closed", "laughing", "long", "rolling", "winking"];
 const mouths = ["open", "sad", "smiling", "straight", "surprise", "teeth"];
 const skins = ["yellow", "green", "red"];
@@ -36,7 +39,7 @@ let avatarId = [0, 0, 0];
 
 updateAvatarPreview();
 
-
+// Refreshes emoji being shown with new values
 function updateAvatarPreview() {
     headPreview.src = `assets/emoji/skin/${skins[skinIndex]}.png`;
     eyesPreview.src = `assets/emoji/eyes/${eyes[eyesIndex]}.png`;
@@ -44,6 +47,7 @@ function updateAvatarPreview() {
     avatarId = [skinIndex, eyesIndex, mouthIndex];
 }
 
+// Event listener to cycle through head types
 headSelector.addEventListener('click', function (event) {
     if (event.target.innerText === 'chevron_left') {
         skinIndex--;
@@ -56,6 +60,7 @@ headSelector.addEventListener('click', function (event) {
     return;
 })
 
+// Event listener to cycle through eye types
 eyesSelector.addEventListener('click', function (event) {
     if (event.target.innerText === 'chevron_left') {
         eyesIndex--;
@@ -68,6 +73,7 @@ eyesSelector.addEventListener('click', function (event) {
     return;
 })
 
+// Event listener to cycle through mouth types
 mouthSelector.addEventListener('click', function (event) {
     if (event.target.innerText === 'chevron_left') {
         mouthIndex--;
