@@ -5,6 +5,8 @@ levels = [
     { cards: 20, matches: 4, rows: 4, cols: 5 },
 ] // Array of levels with the number of cards they contain, how many cards there are in a match, 
 
+
+// All facial elements used to generate emojis
 const eyes = ["normal", "closed", "laughing", "long", "rolling", "winking"],
     mouths = ["open", "sad", "smiling", "straight", "surprise", "teeth"],
     skins = ["yellow", "green", "red"],
@@ -32,6 +34,7 @@ const gameBoard = document.getElementById('gameboard'),
     submitButton = document.getElementById("submit-score")
 root = document.documentElement;
 
+// Function that runs on start
 function setupGame() {
     gameBoard.style.backgroundColor = "grey";
     submitButton.disabled = true;
@@ -99,6 +102,8 @@ function startGame() {
     // highScores = findHighScores();
     cardWrapper.innerHTML = '';
 
+    
+    // Generate random cards (no duplicates) and place two randomly in the grid
     for (let i = 0; i < numberOfCards; i++) {
         let id = allCardIds[i];
         let cardElement = document.createElement('li');
@@ -132,11 +137,14 @@ function startGame() {
 
     }
     const cards = document.querySelectorAll(".card");
+
+    // Event listener to flip cards
     cards.forEach(card => {
         card.addEventListener("click", flipCard);
     });
 }
 
+// Function defining flip behaviour 
 function flipCard({ target: clickedCard }) {
     if (![cardOne, cardTwo, cardThree, cardFour].includes(clickedCard) && !disableDeck) {
         clickedCard.classList.add("flip");
@@ -156,9 +164,9 @@ function flipCard({ target: clickedCard }) {
     }
 }
 
+// Function that checks if two cards match using their unique ID
 function handleCardCheck() {
     disableDeck = true;
-    // Check if two cards match
     let args = Array.from(arguments);
     let cardsSelected = [args[0].dataset.id];
     let match = true;
